@@ -11,8 +11,8 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-    require('admin-lte');
-    window.Swiper = require('swiper').default;
+    window.Swiper = require('swiper/swiper-bundle.min');
+    require('./frontend/main');
 } catch (e) {}
 
 /**

@@ -1,0 +1,237 @@
+@media (max-width: 575px) {
+    .fullbg {
+        height: 180px;
+    }
+
+    .speisekarte__mahlzeiten-gruppe {
+        .speisekarte__mahlzeiten-gruppe-kategorie {
+            .speisekarte__kategorie-bilder-container {
+                height: em(88);
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .speisekarte__mahlzeiten-gruppe {
+        .speisekarte__mahlzeiten-gruppe-kategorie {
+            .speisekarte__kategorie-bilder-container {
+                height: em(132);
+            }
+        }
+
+        .speisekarte__mahlzeiten {
+            .mahlzeit__wrapper {
+                padding: em(16);
+            }
+            .mahlzeit {
+                .mahlzeit__produkt-bilder-container {
+                    margin: em(16);
+                }
+            }
+        }
+    }
+
+    .beilagen-ausklappen {
+        .beilage-footer {
+            padding: em(10.6) em(90) em(31.4);
+        }
+    }
+
+    .beilagen {
+        padding: em(24) em(90) em(0);
+
+        .beilage-kontrollkaestchen {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .xs-py-3 {
+        padding-top: em(20) !important;
+        padding-bottom: em(20) !important;
+    }
+
+    .xs-pl-0 {
+        padding-left: em(0) !important;
+    }
+
+    .xs-pr-0 {
+        padding-right: em(0) !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .fullbg {
+        position: relative;
+        width: 100%;
+        height: em(250);
+    }
+}
+
+@media (min-width: 992px) {  
+    .logo {
+        height: em(60);
+    }
+
+    .topbar {
+        padding-top: em(9);
+        padding-bottom: em(9);
+        font-size: em(14);
+        span {
+            display: inline-block;
+        }
+    }
+
+    .masthead {
+        height: calc(100vh - 95px);
+    }
+
+
+    .Lieferung_Abholung__abholung {
+        padding: em(0) em(32);
+    }
+
+    .footer__copyright {
+        padding-top: em(9);
+        padding-bottom: em(9);
+        font-size: em(14);
+    }
+
+    .menu-speisekarte {
+        margin-bottom: em(55);
+
+        &.has-imprint {
+            margin-bottom: em(15);
+        }
+
+        .mahlzeit {
+            .mahlzeit__beschreibung-zusaetzliche-information {
+                font-size: em(15);
+            }
+        }
+    }
+
+    .menu-kategorie-bar-container {
+        margin-top: em(0);
+    }
+
+    .speisekarte-liste {
+        .container {
+            padding: em(0) em(24);
+        }
+    }
+
+    .speisekarte__mahlzeiten-gruppe {
+        .speisekarte__mahlzeiten-gruppe-kategorie {
+            .speisekarte__kategorie-bilder-container {
+                height: em(158);
+
+                .speisekarte__kategorie-bild {
+                    max-height: em(200);
+                }
+            }
+
+            .speisekarte__kategorie-inhalt {
+                padding: em(19) em(16);
+
+                .speisekarte__kategorie-zeitliche-beschraenkung {
+                    margin: em(7) em(0) em(0);
+                }
+            }
+        }
+
+        .speisekarte__mahlzeiten {
+            .mahlzeit {
+                .mahlzeit__wrapper {
+                    .mahlzeit__beschreibung-texte {
+                        .mahlzeit__beschreibung-zusaetzliche-information {
+                            margin: em(0) em(0) em(10);
+                        }
+
+                        .mahlzeit__beschreibung-waehle-aus {
+                            margin: em(0) em(0) em(10);
+                        }
+
+                        .mahlzeit__beschreibung-attribute-beschreibungen {
+                            margin: em(8) em(0) em(0);
+                        }
+                    }
+                }
+
+                .mahlzeit__produkt-bilder-container {
+                    flex: 0 0 em(100);
+                    height: em(100);
+                    width:  em(100);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .menu-kategorie-bar .swipe-next {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .speisekarte-liste {
+        .container {
+            padding: em(0) em(24);
+        }
+
+        .menu-speisekarte {
+            padding-top: em(0);
+        }
+    }
+
+    .speisekarte-mahlzeiten {
+        margin-bottom: em(55);
+
+        &.has-imprint {
+            margin-bottom: em(15);
+        }
+    }
+
+    .menu-kategorie-bar-container {
+        margin-top: em(0);
+    }
+
+    .speisekarte__mahlzeiten-gruppe {
+        .speisekarte__mahlzeiten-gruppe-kategorie {
+            .speisekarte__kategorie-bilder-container {
+                height: em(184);
+            }
+
+            .speisekarte__kategorie-inhalt {
+                padding: em(19) em(22);
+            }
+        }
+
+        .speisekarte__mahlzeiten {
+            .mahlzeit {
+                .mahlzeit__wrapper {
+                    padding: em(16) em(22);
+                }
+
+                .mahlzeit__produkt-bilder-container {
+                    flex: 0 0 em(170);
+                    height: em(170);
+                    width:  em(170);
+                }
+            }
+        }
+    }
+
+    .beilagen-ausklappen {
+        .beilage-footer {
+            padding: em(13) em(127) em(30) em(110);
+        }
+    }
+
+    .beilagen {
+        padding: em(24) em(127) em(0) em(110);
+    }
+}

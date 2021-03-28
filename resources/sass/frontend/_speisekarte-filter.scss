@@ -1,0 +1,612 @@
+.icon-search:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f002";
+  font-weight: 600;
+}
+
+.icon-ta-next-v2:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f105";
+  font-weight: 600;
+}
+
+.btn-blue-light {
+  color: $blue-dark-2;
+  background-color: $blue-light;
+  border-color: $blue-light;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:hover {
+    background-color: rgba($blue-light, .8);
+    border-color: rgba($blue-light, .8);
+  }
+}
+
+.speisekarte-haupt {
+  width: 100%;
+
+  &.kategorie-scroll {
+    .menu-kategorie-bar-container {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 15;
+    }
+  }
+}
+
+.speisekarte-liste {
+  .menu-speisekarte {
+    width: 100%;
+    padding-top: em(53);
+
+    .kein_produkt_gefunden {
+      display: none;
+      text-align: center;
+      max-width: 75%;
+      font-size: em(15);
+      margin: 15vh auto em(40);
+
+      .icon-ta-search-icon:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f002";
+        font-weight: 600;
+      }
+
+      .reset-produkt-suche {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        font-size: em(18);
+        border: em(1) solid $blue-light;
+        color: $blue-dark-2;
+        width: em(226);
+        height: em(48);
+        border-radius: em(2);
+
+        &:hover {
+          cursor: pointer;
+          background-color: $blue-light-1;
+          color: $blue-dark-2;
+        }
+      }
+    }
+
+    .kein_produkt_gefunden_text {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 600;
+      font-size: em(18);
+      color: $blue-dark-2;
+      margin: em(14) em(0) em(24);
+    }
+  }
+}
+
+.menu-speisekarte {
+  position: relative;
+
+  .mahlzeit {
+    .mahlzeit__beschreibung-zusaetzliche-information {
+      padding-top: em(8);
+      width: auto !important;
+      word-break: normal;
+    }
+  }
+}
+
+.menu-kategorie-bar-container {
+  background-color: $blue-light;
+  height: em(64);
+  position: relative;
+}
+
+.menu-kategorie-bar {
+  height: em(64);
+  background-color: $blue-light;
+  display: flex;
+  flex-direction: row;
+  color: $blue-dark-2;
+
+  &.container {
+    padding: em(0);
+  }
+
+  .menu-mahlzeit-suche {
+    max-width: 0;
+    overflow: hidden;
+    position: absolute;
+    width: calc(100% - 50px);
+    left: 50px;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    background: $blue-light;
+
+    .menu-mahlzeit-suche-label {
+      padding: em(12) em(0);
+      width: 100%;
+    }
+
+    .menu-mahlzeit-suche-input {
+      height: 40px;
+      padding: em(0) em(8) em(0) em(0);
+      width: 100%;
+      border-radius: em(2);
+      background: #fff;
+      border-top: em(1) solid $blue-light-2;
+      border-bottom: em(1) solid $blue-light-2;
+    }
+
+    .menu-mahlzeit-suche-close {
+      display: inline-block;
+      height: em(40);
+      margin: em(12) em(15) em(12) em(0);
+      width: em(40);
+      text-align: center;
+      border: em(1) solid $blue-light-2;
+      background: #fff;
+      cursor: pointer;
+
+      &:after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f00d";
+        font-weight: 600;
+        font-size: em(11);
+        line-height: em(40);
+        font-style: normal;
+      }
+    }
+  }
+
+  .menu-kategorie-suche,
+  .swipe-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .swipe-next-button,
+    .swipe-next-button {
+      width: em(64);
+      height: em(64);
+      text-align: center;
+
+      &:before,
+      &:before {
+        width: auto;
+        margin: em(0);
+        line-height: em(64);
+        font-size: em(12);
+      }
+    }
+
+    .icon-search,
+    .icon-search {
+      height: em(40);
+      line-height: em(40);
+      width: em(35);
+      margin: em(0) em(0) em(0) em(15);
+      text-align: center;
+      border-top: em(1) solid transparent;
+      border-left: em(1) solid transparent;
+      border-bottom: em(1) solid transparent;
+
+      &:before,
+      &:before {
+        width: auto;
+        margin: em(0);
+        font-size: em(19);
+      }
+    }
+  }
+
+  .expanded .icon-search {
+    background: #fff;
+    border-top: em(1) solid transparent;
+    border-left: em(1) solid transparent;
+    border-bottom: em(1) solid transparent;
+  }
+
+  .expanded .menu-mahlzeit-suche {
+    max-width: em(5000);
+  }
+
+  .menu-kategorie-liste {
+    display: flex;
+    height: em(64);
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    list-style: none;
+    font-size: em(14);
+    font-weight: 300;
+    height: em(26);
+    padding: em(2) em(19) em(0);
+    font-family: 'Barlow', sans-serif;
+    color: $blue-dark-2;
+    text-overflow: unset;
+    width: auto;
+
+    &.slide-active {
+      color: $black;
+      font-weight: bold;
+    }
+  }
+
+  .swipe-next {
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+
+    &:focus {
+      display: none;
+    }
+  }
+
+  .swipe-next.swiper-button-disabled {
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  .swiper-container {
+    width: 100%;
+  }
+}
+
+.speisekarte {
+  margin-top: em(16);
+}
+
+.speisekarte__mahlzeiten-gruppe {
+  .speisekarte__mahlzeiten-gruppe-kategorie {
+    border-radius: em(2) em(2) em(0) em(0);
+    border: em(1) solid $blue-light;
+
+    .speisekarte__kategorie-bilder-container {
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border-radius: em(1) em(1) em(0) em(0);
+
+      .speisekarte__kategorie-bild {
+        width: 100%;
+      }
+    }
+
+    .speisekarte__kategorie-inhalt {
+      border-radius: em(2) em(2) em(0) em(0);
+      padding: em(19) em(12);
+      background-color: $blue-light;
+
+      &.speisekarte__kategorie-hat-bild {
+        border-radius: em(0);
+      }
+
+      .speisekarte__kategorie-name {
+        font-size: em(18);
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        line-height: em(22);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $blue-dark-2;
+      }
+
+      .speisekarte__kategorie-beschreibung {
+        font-size: em(12);
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        line-height: em(29.28);
+        color: $blue-dark-2;
+        position: relative;
+        margin: em(4) em(0) em(0);
+      }
+
+      .speisekarte__kategorie-zeitliche-beschraenkung {
+        margin: em(4) em(0) em(0);
+        color: $black;
+        font-family: 'Barlow', sans-serif;
+        font-size: em(12);
+        line-height: em(28.28);
+
+        .fa-clock:before {
+          color: $blue-dark;
+        }
+      }
+    }
+  }
+
+  .speisekarte__mahlzeiten {
+    .mahlzeiten-container {
+      border: em(1) solid $blue-light;
+      border-radius: em(2);
+      margin: em(8) em(0);
+      position: relative;
+    }
+
+    .mahlzeit {
+      .beilagen-ausklappen {
+        .innen {
+          .beilage-kontrollkaestchen {
+            .kontrollkaestchen-inline {
+              > span {
+                color: $blue-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mahlzeit-hinzufuegen-btn-wapper {
+      width: 100%;
+    }
+  }
+
+  .mahlzeit__wrapper {
+    max-width: 100%;
+    margin: em(0);
+    padding: em(8) em(12);
+    flex: 1;
+
+    .mahlzeit__beschreibung-texte {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .mahlzeit-name {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 600;
+        font-size: em(18);
+        line-height: em(19.5);
+        color: $blue-dark-2;
+        margin: em(0) em(0) em(4);
+
+        .text-mahlzeit-allergene {
+          font-weight: 400;
+          font-size: em(11);
+          color: $blue-middle;
+          border-radius: 0;
+          padding: 0;
+          text-decoration: none;
+          display: inline-block;
+          position: absolute;
+          top: 16px;
+          right: 16px;
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+
+      .mahlzeit__beschreibung-zusaetzliche-information {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 400;
+        font-size: em(14);
+        color: $blue-dark;
+        line-height: em(24);
+        margin: em(0) em(0) em(4);
+      }
+
+      .auswahl-preis {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .mahlzeit__beschreibung-waehle-aus {
+          font-family: 'Barlow', sans-serif;
+          font-style: italic;
+          font-size: em(12);
+          color: $blue-dark;
+          line-height: em(24);
+          margin: em(0) em(0) em(4);
+        }
+
+        .mahlzeit__preis {
+          font-family: 'Barlow', sans-serif;
+          font-weight: 600;
+          font-size: em(18);
+          line-height: em(19.5);
+          letter-spacing: em(-0.5);
+          color: $blue-light;
+          margin: auto em(0);
+        }
+      }
+    }
+  }
+
+  .mahlzeit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    .beilagen-ausklappen {
+      position: relative;
+      width: 100%;
+
+      .innen {
+        background-color: rgba($blue-light, .5);
+      }
+
+      .beilage {
+        font-size: em(14);
+        margin-bottom: em(12);
+        position: relative;
+
+        h3 {
+          font-weight: 400;
+          font-size: em(12);
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: $blue-dark-2;
+        }
+      }
+
+      .groessenauswahl {
+        .beilage {
+          margin-bottom: em(0);
+        }
+      }
+    }
+  }
+}
+
+.beilagen-fromular-container form,
+.groessenauswahl {
+  max-width: em(1090);
+  margin: em(0) auto;
+}
+
+.beilagen {
+  padding: em(32) em(24) em(0);
+
+  .auswahl-eingabe {
+    position: relative;
+    line-height: em(50);
+    height: em(50);
+    display: block;
+  }
+
+  .kontrollkaestchen-inline {
+    margin: em(0) em(5) em(5) em(0);
+    max-width: 100%;
+    max-height: 100%;
+
+    > span {
+      box-shadow: none;
+      min-height: em(30);
+      height: auto;
+      line-height: 1.5;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 100%;
+      word-break: break-word;
+      align-items: normal;
+      padding: em(0) em(0) em(0) em(8);
+      font-weight: 400;
+    }
+  }
+
+  .text-mahlzeit-allergene {
+    display: inline-block;
+    position: absolute;
+    right: em(5);
+  }
+}
+
+.text-mahlzeit-allergene {
+  font-size: em(11);
+  cursor: pointer;
+  color: $blue-middle;
+  border-radius: 0;
+  padding: 0;
+  text-decoration: none;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &.loading {
+    cursor: wait;
+  }
+}
+
+.beilage-kontrollkaestchen {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: em(25);
+  margin-bottom: em(5);
+
+  span {
+    &.inline-beschreibung {
+      font-size: 90%;
+      line-height: em(21.6);
+      white-space: normal;
+      display: inline-block;
+      color: $blue-dark-2;
+    }
+  }
+}
+
+.kontrollkaestchen-inline {
+  display: inline-block;
+  cursor: pointer;
+  max-height: em(50);
+
+  > span {
+    box-sizing: border-box;
+  }
+}
+
+.form-check-input:focus {
+  box-shadow: none;
+}
+
+.beilagen-ausklappen {
+  .beilage-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: em(10) em(24) em(24);
+
+    .menu-preis {
+      width: em(200);
+      min-width: em(200);
+      display: flex;
+      justify-content: space-between;
+      line-height: em(20);
+      background-color: $white;
+      border: em(1) solid #ced4da;
+      border-radius: em(4);
+
+      .input-group-text {
+        background-color: white;
+      }
+
+      .form-control {
+        border-left: 0;
+        border-right: 0;
+      }
+    }
+
+    .beilagen-hinzufuegen-button {
+      margin-left: 20px;
+
+      h3 {
+        font-weight: 600;
+        margin: 0;
+        font-size: em(14);
+      }
+    }
+
+    /*.menu-preis,
+    .beilagen-hinzufuegen-button {
+      height: 40px;
+    }*/
+  }
+
+  .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    border-left: 0;
+  }
+}

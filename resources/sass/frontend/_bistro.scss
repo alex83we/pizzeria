@@ -1,0 +1,221 @@
+.pos-r {
+    position: relative;
+}
+
+.py-7 {
+    padding-top: em(70) !important;
+    padding-bottom: em(70) !important;
+}
+
+.px-7 {
+    padding-left: em(70) !important;
+    padding-right: em(70) !important;
+}
+
+.pl-7 {
+    padding-left: em(70) !important;
+}
+
+.pr-7 {
+    padding-right: em(70) !important;
+}
+
+.fullbg {
+    position: absolute;
+    background-repeat: no-repeat;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 50%;
+
+    &.bg-pos-right {
+        left: inherit;
+        right: 0;
+    }
+}
+
+.light-weight {
+    font-weight: 300 !important;
+}
+
+.solid-weight {
+    font-weight: 700 !important;
+}
+
+.min-height {
+    min-height: 325px;
+}
+
+.theme-bg {
+    background-color: $blue-dark-1;
+
+    .timeline {
+
+        .timeline-body {
+            .title::before {
+              background-color: #ffffff;
+            }
+        
+            &:before {
+              background: rgba(255, 255, 255, 0.5);
+            }
+          }
+        
+          .year.theme-bg {
+            background: #ffffff;
+            color: #999999;
+          }
+
+    }
+}
+
+.theme-text, .theme-text h1, .theme-text h2, .theme-text h3, .theme-text h4, .theme-text h5, .theme-text h6 { 
+    color: $blue-dark-2;
+}
+
+.heading-block {
+    margin-bottom: em(30);
+
+    span {
+        letter-spacing: em(1);
+        display: block;
+    }
+
+    .line {
+        &:after {
+            content: "";
+            display: block;
+            width: em(64);
+            height: em(4);
+            background-color: $black;
+            color: $blue-dark-2;
+            margin: em(16) em(0) ;
+        }
+    }
+}
+
+.timeline {
+    .year {
+      display: none;
+    }
+  
+    .timeline-panel {
+      padding-left: em(30);
+      position: relative;
+    }
+  
+    .timeline-body {
+      > {
+        p, ul {
+          background: none;
+          padding: 0;
+        }
+      }
+  
+      padding-top: em(0);
+      padding-bottom: em(30);
+      position: relative;
+      font-size: em(14);
+  
+      &:before {
+        content: "";
+        position: absolute;
+        left: em(-24px);
+        top: em(5px);
+        width: em(1px);
+        height: 100%;
+        background: #f0f0f0;
+      }
+  
+      .title {
+        position: relative;
+        font-weight: 400;
+        top: em(-6px);
+        margin-bottom: em(0);
+  
+        &:before {
+          content: "";
+          position: absolute;
+          left: em(-28px);
+          top: em(10px);
+          width: em(10px);
+          height: em(10px);
+          background: #2791d8;
+          border-radius: 50%;
+        }
+      }
+    }
+  
+    .timeline-panel:last-child {
+      .timeline-body {
+        padding-bottom: em(0);
+      }
+  
+      &:before {
+        content: normal;
+      }
+    }
+  }
+  
+  /* Timeline - Dark BG */
+  
+  .dark-bg .timeline .timeline-body:before {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .theme-bg .timeline {
+    .timeline-body {
+      .title::before {
+        background-color: #ffffff;
+      }
+  
+      &:before {
+        background: rgba(255, 255, 255, 0.5);
+      }
+    }
+  
+    .year.theme-bg {
+      background: #ffffff;
+      color: #999999;
+    }
+  }
+  
+  /***********************/
+  /*  Timeline - 2*/
+  /***********************/
+  
+  .timeline-2 {
+    .year {
+      position: absolute;
+      left: em(-20px);
+      top: em(23px);
+      font-size: em(26px);
+      color: #ffffff;
+      padding: em(3px) em(10px);
+      padding-bottom: em(6px);
+      font-weight: 700;
+      line-height: em(22px);
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      display: block;
+    }
+  
+    .timeline-panel {
+      padding-left: em(50px);
+    }
+  
+    .timeline-body {
+      &:before {
+        left: em(-32px);
+        z-index: -1;
+        background-color: #dddddd;
+      }
+  
+      .title::before {
+        content: normal;
+      }
+    }
+  }
+

@@ -1,0 +1,50 @@
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+$white: #ffffff;
+$black: #000000;
+$blue-light: #92bae5;
+$blue-light-1: #82a6cb;
+$blue-light-2: #7191b2;
+$blue-middle: #617c98;
+$blue-middle-1: #51687f;
+$blue-middle-2: #415366;
+$blue-dark: #313e4c;
+$blue-dark-1: #202933;
+$blue-dark-2: #101519;
+
+* {
+    box-sizing: border-box;
+    margin: em(0);
+    padding: em(0);
+  }
+
+.owl-theme .owl-dots .owl-dot {
+  span {
+    width: em(20);
+    height: em(3);
+    margin: em(5) em(3);
+    background: $blue-light;
+  }
+
+  &.active span, &:hover span {
+    background: $blue-dark-2;
+  }
+}
+
+a {
+  cursor: pointer;
+  outline: 0;
+  text-decoration: none;
+}

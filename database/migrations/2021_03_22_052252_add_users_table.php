@@ -10,7 +10,7 @@ class AddUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('phone')->nullable()->after('password');
-            $table->string('photo')->default('default.jpg')->after('phone');
+            $table->string('photo')->default('default.png')->after('phone');
         });
     }
 
