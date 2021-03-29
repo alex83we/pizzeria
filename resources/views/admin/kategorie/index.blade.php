@@ -35,18 +35,14 @@
                         <td class="align-middle fw-bolder fs-6">{{ $kategorie->description }}</td>
                         <td class="align-middle fw-bolder fs-6">
                             @if ($kategorie->images == true)
-                                <img src="{{ Storage::disk('public')->url('images/kategorie/'.$kategorie->images) }}"
-                                     alt="{{
-                                 $kategorie->title }}" style="width: 150px;">
+                                <img src="{{ Storage::disk('public')->url('images/kategorie/'.$kategorie->images) }}" alt="{{ $kategorie->title }}" style="width: 150px;">
                             @endif
                         </td>
                         @hasanyrole('Admin|Inhaber')
-                        <td class="align-middle text-end"><a href="javascript:void(0)" title="Bearbeiten"
-                                                             onclick="editKategorie({{
-                             $kategorie->id }})" class="btn btn-light"><i class="fas fa-edit fw-bolder fs-6"></i></a></td>
+                            <td class="align-middle text-end"><a href="{{ route('admin.kategorien.edit', $kategorie->id) }}" title="Bearbeiten" onclick="editKategorie({{ $kategorie->id }})" class="btn btn-light"><i class="fas fa-edit fw-bolder fs-6"></i></a></td>
                         @else
                             <td class="align-middle text-end fw-bolder fs-6">Änderung anfragen</td>
-                            @endhasanyrole
+                        @endhasanyrole
                     </tr>
                 @endforeach
                 </tbody>

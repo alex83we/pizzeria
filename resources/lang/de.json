@@ -393,5 +393,7 @@
   "create an ingredient": "Zutat erstellen",
   "Create categories": "Kategorien erstellen",
   "Categories": "Kategorien",
-  "Add category": "Kategorie hinzufügen"
+  "Add category": "Kategorie hinzufügen",
+  "Edit category": "Kategorie bearbeiten",
+  "edit menu": "Speisekarte bearbeiten"
 }

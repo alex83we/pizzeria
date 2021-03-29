@@ -2,6 +2,8 @@
 
 namespace App\Models\Frontend;
 
+use App\Models\Admin\Category;
+use App\Models\Admin\Zutaten;
 use Illuminate\Database\Eloquent\Model;
 
 class Speisekarte extends Model

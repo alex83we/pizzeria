@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -89,7 +91,10 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $role = Role::findOrFail($id);
+        $permissions = Permission::all();
+        $userPermission = $role->permissions->pluck('name','name')->all();
+        return view('admin.role.edit', compact('role', 'permissions', 'userPermission'));
     }
 
     /**
@@ -101,7 +106,11 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $role = Role::findById($id);
+        $role->syncPermissions($request->permissions);
+
+        Toastr::success('Berechtigungen erfolgreich geändert!', 'ERFOLGREICH');
+        return redirect()->route('admin.role.index');
     }
 
     /**

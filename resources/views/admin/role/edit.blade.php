@@ -1,5 +1,5 @@
 @extends('admin.layout.admin')
-@section('title'){{ __('Roles') }}@endsection
+@section('title'){{ __('Roles edit') }}@endsection
 @section('bodyTag', 'sidebar-mini')
 
 @push('css')
@@ -9,23 +9,26 @@
 @section('content')
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">{{ __('Add new Role') }}</h3>
+            <h3 class="card-title">{{ __('Roles edit') }}</h3>
             <div class="card-tools">
                 <a href="{{ route('admin.role.index') }}" class="btn btn-danger btn-sm"><i class="fas fa-shield-alt"></i> {{ __('See all Roles') }}</a>
             </div>
         </div>
         <div class="card-body">
-            <form action="{{ route('admin.role.store') }}" method="POST">
+            <form action="{{ route('admin.role.update', $role->id) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="{{ __('Role Name') }}" class="form-control">
+                        <label>{{ $role->name }} / {{ __('Permissions') }} bearbeiten</label>
+                        <input type="hidden" name="name" placeholder="{{ __('Role Name') }}" class="form-control" value="{{ $role->name }}">
                     </div>
                     @forelse($permissions as $permission)
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="permissions[]" value="{{ $permission->id }}" id="permission-{{ $permission->id }}">
-                        <label class="form-check-label" for="permission-{{ $permission->id }}">{{ trans($permission->name) }}</label>
-                    </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" name="permissions[]" id="permissions" value="{{ $permission->name }}" @if(in_array($permission->name, $userPermission)) checked @endif> {{ trans($permission->name) }}
+                            </label>
+                        </div>
                     @empty
                         <div>{{ __('No Record Found') }}</div>
                     @endforelse

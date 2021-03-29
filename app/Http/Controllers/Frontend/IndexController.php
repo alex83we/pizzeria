@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Frontend\Category;
-use App\Models\Frontend\Zutaten;
+use App\Models\Admin\Category;
+use App\Models\Admin\Zutaten;
 
 class IndexController extends Controller
 {

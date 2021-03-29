@@ -10,6 +10,7 @@
     <title>{{ config('app.name') }} | @yield('title')</title>
 
     <link rel="stylesheet" href="{{ asset('css/admin/app.css') }}">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     @stack('css')
 </head>
 <body class="hold-transition @yield('bodyTag')">
@@ -60,6 +61,9 @@
 <!-- REQUIRED SCRIPTS -->
 <script src="{{ asset('js/admin/app.js') }}"></script>
 @stack('js')
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
+    @stack('scriptjs')
 
     <script>
         $(".alert").delay(10000).slideUp(200, function() {

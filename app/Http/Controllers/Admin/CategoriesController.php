@@ -7,6 +7,7 @@ use App\Models\Admin\Category;
 use Brian2694\Toastr\Facades\Toastr;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -103,9 +104,10 @@ class CategoriesController extends Controller
      * @param Category $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return view('admin.kategorie.edit', compact('category'));
     }
 
     /**
@@ -115,9 +117,47 @@ class CategoriesController extends Controller
      * @param Category $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $search = array("Ä", "Ö", "Ü", "ä", "ö", "ü", "ß", "´", " ", "_");
+        $replace = array("Ae", "Oe", "Ue", "ae", "oe", "ue", "ss", "", "-", "-");
+
+        $title = $request->title;
+        $name = strtolower(str_replace($search, $replace, $title));
+        $slug = $name;
+        $published_at = Carbon::parse(now())->toDateTimeLocalString();
+        $description = $request->description;
+        if (isset($request->published)) { $published = true; } else { $published = false; }
+
+        $images = $request->file('images');
+        if (isset($images)) {
+            $imagess = $slug.'-'.$images->getClientOriginalName();
+            $image = str_replace($search, $replace, $imagess);
+
+            if (Storage::disk('public')->exists('images/kategorie/'.$image)) {
+                Storage::disk('public')->makeDirectory('images/kategorie/'.$image);
+            }
+            $KategorieImage = Image::make($images)->resize(1400, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->stream();
+            Storage::disk('public')->put('images/kategorie/'.$image, $KategorieImage);
+        } else {
+            $image = $request->imagesalt;
+        }
+
+        $category->title = $title;
+        $category->name = $name;
+        $category->slug = $slug;
+        $category->images = $image;
+        $category->description = $description;
+        $category->published = true;
+        $category->kategorie = $title;
+        $category->published_at = $published_at;
+        $category->save();
+
+        Toastr::success('Kategorie erfolgreich geändert!', 'ERFOLGREICH');
+        return redirect()->route('admin.kategorien.index');
     }
 
     /**
