@@ -16931,6 +16931,9 @@ a {
   line-height: 1.5rem;
   margin: 0rem 0rem 0.25rem;
 }
+.speisekarte__mahlzeiten-gruppe .mahlzeit__wrapper .mahlzeit__beschreibung-texte .mahlzeit__beschreibung-zusaetzliche-information span:not(:last-child)::after {
+  content: ", ";
+}
 .speisekarte__mahlzeiten-gruppe .mahlzeit__wrapper .mahlzeit__beschreibung-texte .auswahl-preis {
   display: flex;
   flex-direction: row;

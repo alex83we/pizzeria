@@ -168,6 +168,7 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Brian2694\Toastr\ToastrServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -232,6 +233,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
     ],
 

@@ -11,12 +11,14 @@ class CreateSpeisekartesTable extends Migration
         Schema::create('speisekartes', function (Blueprint $table) {
             $table->bigIncrements('id');
 
+            $table->bigInteger('categories_id')->unsigned();
             $table->string('speisekarte_name');
             $table->decimal('speisekarte_basispreis', 8, 2);
             $table->decimal('speisekarte_basispreisabholung', 8, 2);
             $table->decimal('speisekarte_basispreislieferung', 8, 2);
-            $table->string('speisekarte_allergene');
-            $table->string('speisekarte_zusatzstoffe');
+            $table->string('speisekarte_allergene')->nullable();
+            $table->string('speisekarte_zusatzstoffe')->nullable();
+            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
 
             $table->timestamps();
         });

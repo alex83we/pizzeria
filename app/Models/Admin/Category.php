@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-
     public $table = 'categories';
 
     protected $fillable = [
@@ -19,8 +18,8 @@ class Category extends Model
         'kategorie',
     ];
 
-    public function speisekarte()
+    public function speisekartes()
     {
-        return $this->belongsToMany(Speisekarte::class);
+        return $this->hasMany(Speisekarte::class);
     }
 }

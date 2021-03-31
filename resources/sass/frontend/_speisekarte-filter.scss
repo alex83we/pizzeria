@@ -405,6 +405,10 @@
         color: $blue-dark;
         line-height: em(24);
         margin: em(0) em(0) em(4);
+
+        span:not(:last-child)::after {
+          content: ', ';
+        }
       }
 
       .auswahl-preis {

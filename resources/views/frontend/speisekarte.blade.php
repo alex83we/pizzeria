@@ -48,7 +48,7 @@
                                 <h3 class="kein_produkt_gefunden_text">Keine Produkte gefunden</h3>
                                 <button class="reset-produkt-suche js-reset-produkt-filter">Suche zurücksetzen</button>
                             </div>
-                            <div class="speisekarte__mahlzeiten-gruppe menu-mahlzeiten-gruppe-beliebt" id="0">
+                            {{--<div class="speisekarte__mahlzeiten-gruppe menu-mahlzeiten-gruppe-beliebt" id="0">
                                 <div class="speisekarte__mahlzeiten-gruppe-kategorie">
                                     <div class="speisekarte__kategorie-inhalt speisekarte__kategorie-hat-bild">
                                         <div class="speisekarte__kategorie-name">
@@ -56,126 +56,59 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            @foreach($category as $kategorie)
-                                <div class="speisekarte__mahlzeiten-gruppe" id="{{ $kategorie->id }}" anchor-id="{{ $kategorie->slug }}">
+                            </div>--}}
+
+                            @foreach($category as $key => $kategorie)
+                                <div class="speisekarte__mahlzeiten-gruppe" id="{{ $kategorie->slug }}" anchor-id="{{ $kategorie->slug }}">
                                     <div class="speisekarte__mahlzeiten-gruppe-kategorie">
                                         <div class="lazy speisekarte__kategorie-bilder-container" data-bg="{{ Storage::disk('public')->url('images/kategorie/'.$kategorie->images) }}" data-was-processed="true" style="background-image: url('{{ Storage::disk('public')->url('images/kategorie/'.$kategorie->images) }}')"></div>
                                         <div class="speisekarte__kategorie-inhalt">
                                             <div class="speisekarte__kategorie-name">
-                                                {{ $kategorie->kategorie }}
+                                                {{ $kategorie->title }}
                                             </div>
+                                            @if(false)
                                             <div class="speisekarte__kategorie-zeitliche-beschraenkung">
                                                 <i class="fas fa-clock"></i>
                                                 Achtung: Alle Produkte in dieser Kategorie können nur von: 17:00 bis 20:00 geliefert werden.
                                             </div>
+                                            @endif
                                             <div class="speisekarte__kategorie-beschreibung js-content-toggle">
-                                                456
+                                                {{ $kategorie->description }}
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="speisekarte__mahlzeiten">
-                                        <div class="mahlzeiten-container js-mahlzeiten-container" id="">
-                                            <div class="js-mahlzeit-item" itemscope itemtype="http://schema.org/Product">
-                                                <div class="mahlzeit__wrapper">
-                                                    <div class="mahlzeit__beschreibung-texte">
-{{--                                                    <a href="#speisekarte-{{ $kategorie->id }}" class="mahlzeit__beschreibung-texte" role="button" id="{{ $kategorie->id }}" data-toggle="collapse" aria-expanded="false" aria-controls="speisekarte-{{ $kategorie->id }}">--}}
-                                                    <span class="mahlzeit-name" itemprop="name">
-                                                        <span class="notranslate" data-product-name="{{ $kategorie->title }}">{{ $kategorie->title }}</span>
-                                                        <button class="btn btn-link js-produkt-allergene text-mahlzeit-allergene" title="Weitere Produktinformationen" data-id="{{ $kategorie->id }}" data-name="{{ $kategorie->name }}">Produktinfo</button>
-                                                    </span>
-                                                        <div class="mahlzeit__beschreibung-zusaetzliche-information" itemprop="description">
-                                                            {{ $kategorie->kategorie }}
-                                                        </div>
-                                                        <span class="auswahl-preis">
-                                                    <div class="mahlzeit__beschreibung-waehle-aus">
-                                                        {{ 'Wahl aus: ' . $kategorie->slug }}
-                                                    </div>
-                                                    <div itemprop="price" class="mahlzeit__preis">4,50 €</div>
-                                                    </span>
-{{--                                                    </a>--}}
-                                                    </div>
-                                                </div>
-                                                <div id="speisekarte-{{ $kategorie->id }}" class="collapse">
-                                                    <div class="mahlzeit">
-                                                        <div class="beilagen-ausklappen">
-                                                            <div class="innen">
-                                                                <div class="beilage-inhalt">
-                                                                    <div class="beilagen groessenauswahl">
-                                                                        <div class="beilage">
-                                                                            <h3>Döner Kebab</h3>
-                                                                            <span class="auswahl-eingabe">
-                                                                            <select name="groessenauswahl" id="igroessenauswahl" class="form-control">
-                                                                                <option data-price="" data-id="" value="">&#8709 28cm: 7,50 €</option>
-                                                                            </select>
-                                                                        </span>
+                                    @foreach($speisekarten as $speisekarte)
+                                        @if($speisekarte->categories_id == $kategorie->id)
+                                            <div class="speisekarte__mahlzeiten">
+                                                <div class="mahlzeiten-container js-mahlzeiten-container" id="{{ $speisekarte->id }}">
+                                                    <div class="js-mahlzeit-item" itemscope itemtype="http://schema.org/Product">
+                                                        <div class="mahlzeit__wrapper">
+                                                            <div class="mahlzeit__beschreibung-texte">
+{{--                                                                <a href="#speisekarte-{{ $speisekarte->id }}" class="mahlzeit__beschreibung-texte" role="button" id="{{ str_replace(' ', '_', $speisekarte->speisekarte_name) }}" data-toggle="collapse" aria-expanded="false" aria-controls="speisekarte-{{ $speisekarte->id }}">--}}
+                                                                    <span class="mahlzeit-name" itemprop="name">
+                                                                        <span class="notranslate" data-product-name="{{ str_replace(' ', '_', $speisekarte->speisekarte_name) }}">{{ $speisekarte->speisekarte_name }}</span>
+                                                                        <button class="btn btn-link js-produkt-allergene text-mahlzeit-allergene" title="Weitere Produktinformationen" data-id="{{ $speisekarte->id }}" data-name="{{ str_replace(' ', '_', $speisekarte->speisekarte_name) }}">@if($speisekarte->speisekarte_zusatzstoffe == true){{ $speisekarte->speisekarte_zusatzstoffe. ', ' }}@endif @if($speisekarte->speisekarte_allergene == true){{ $speisekarte->speisekarte_allergene }}@endif</button>
+                                                                    </span>
+                                                                    <div class="mahlzeit__beschreibung-zusaetzliche-information" itemprop="description">
+                                                                        @foreach($speisekarte->zutatens as $zutat)
+                                                                            <span>{{ $zutat->zutat }}</span>
+                                                                        @endforeach
+                                                                    </div>
+                                                                    <span class="auswahl-preis">
+                                                                        <div class="mahlzeit__beschreibung-waehle-aus">
+                                                                            @if(false){{ 'Wahl aus: ' . $speisekarte->slug }}@endif
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="beilagen-fromular-container">
-                                                                        <form id="{{ $kategorie->id }}" action="{{ route('admin.speisekarte.store') }}" method="POST">
-                                                                            @csrf
-                                                                            <input type="hidden" name="action" value="hinzufuegen">
-                                                                            <input type="hidden" name="menucat" value="kategorieID">
-                                                                            <input type="hidden" name="produkt" value="productID">
-                                                                            <input type="hidden" name="produktname" value="produktName">
-                                                                            <input type="hidden" name="basispreis" value="basisPreis">
-                                                                            <input type="hidden" name="basispreislieferung" value="basisPreisLieferung">
-                                                                            <input type="hidden" name="lieferkosten" value="lieferkosten">
-                                                                            <input type="hidden" name="rest" value="rest">
-                                                                            <input type="hidden" name="produktpreis" value="ProduktPreis">
-                                                                            <div class="beilagen">
-                                                                                <div class="beilage beilage-kontrollkaestchengruppe">
-                                                                                    <h3>Ihre Extras:</h3>
-                                                                                    <!-- foreach() schleife -->
-                                                                                    <div class="beilage-kontrollkaestchen">
-                                                                                        <div class="kontrollkaestchen-inline">
-                                                                                            <div class="d-flex">
-                                                                                                <div class="form-check">
-                                                                                                    <input class="form-check-input" type="checkbox" name="beilage_{{ $kategorie->id }}" id="ibeilage_{{ $kategorie->id }}" value="mit Salami (+ 0,75 €)" data-name="" data-price="" data-preispickup="" data-sidedishid="{{ $kategorie->id }}">
-                                                                                                    <span class="inline-beschreibung">
-                                                                                                    mit Salami
-                                                                                                        <span class="beilage-auswahl-preis">(+0,75 €)</span>
-                                                                                                    </span>
-                                                                                                </div>
-                                                                                                <span class="beilage-allergene-wrapper ml-auto">
-                                                                                                    <span class="text-mahlzeit-allergene" data-name="" alt="Weitere Produktinformationen" title="Weitere Produktinformationen" data-sidedish-id="{{ $kategorie->id }}">Produktinfo</span>
-                                                                                                </span>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <!-- end foreach schleife -->
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="beilage-footer">
-                                                                                <div class="menu-preis input-group input-group-sm">
-                                                                                    <div class="input-group-prepend">
-                                                                                        <div class="input-group-text btn-nummer" id="minus-btn" data-type="minus" data-field="ibeilage_[{{ $kategorie->id }}]"><i class="fas fa-minus"></i></div>
-                                                                                    </div>
-                                                                                    <input type="text" class="form-control form-control-sm text-center eingabe-nummer" name="beilage" id="ibeilage_[{{ $kategorie->id }}]" value="@if (old('anzahl') == true){{ old('anzahl') }}@else{{ 1 }}@endif" min="1" max="100">
-
-                                                                                    <div class="input-group-append">
-                                                                                        <div class="input-group-text btn-nummer" id="plus-btn" data-type="plus" data-field="ibeilage_[{{ $kategorie->id }}]"><i class="fas fa-plus"></i></div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="beilagen-hinzufuegen-button mahlzeit-hinzufuegen-btn-wapper d-grid">
-                                                                                    <button class="btn btn-blue-light btn-block" type="submit">
-                                                                                    <span class="button-hinzufuegen-value">
-                                                                                        <h3>3,58 €</h3>
-                                                                                    </span>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
+                                                                        <div itemprop="price" class="mahlzeit__preis">{{ $speisekarte->speisekarte_basispreis . ' €' }}</div>
+                                                                    </span>
+{{--                                                                </a>--}}
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        @endif
+                                    @endforeach
                                 </div>
                             @endforeach
                         </div>
@@ -184,6 +117,25 @@
             </div>
         </div>
     </main>
+    <section id="speisekarte" class="speisekarte mb-4">
+        <div class="container">
+            <div class="row speisekarte__allergene">
+                <div class="col-lg-12">
+                    <div class="heading-block">
+                        <span class="text-uppercase light-weight">Gut zu wissen.</span>
+                        <h2 class="text-uppercase solid-weight">Zusatzstoffe und Allergene</h2>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <p class="mb-1">Allergene: </p>
+                    <p>A = Gluten, B = enthält Krebstiere, C = enthält Eier, D = enthält Soja, E = enthält Fisch, G = enthält Milch, H = enthält Schalenfrüchte, I = enthält Sellerie, J = enthält Senf, S = enthält Sesam</p>
+                    <p class="mb-1">Zusatzstoffe: </p>
+                    <p>1 mit Farbstoff, 2 mit Konservierungsstoff, 3 mit Antioxidationsmittel, 4 mit Geschmacksverstärker, 6 gewachst, 10 mit Phosphat, 11 koffeinhaltig</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="smartbnr" id="smartbnr">
         <div class="smartbnr-wrapper">

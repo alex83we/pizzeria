@@ -89,7 +89,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/kanban.html" class="nav-link {{ Request::is('admin/speisekarte') ? 'active' : '' }}">
+                    <a href="{{ route('admin.speisekarte.index') }}" class="nav-link {{ Request::is('admin/speisekarte') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-file"></i>
                         <p>
                             Speisekarte

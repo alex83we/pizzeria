@@ -42,7 +42,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="zutatenModal">Zutat hinzufügen</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
                 </div>
                 <form id="zutatenAddForm">
                     @csrf

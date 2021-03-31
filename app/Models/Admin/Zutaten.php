@@ -11,6 +11,6 @@ class Zutaten extends Model
 
     public function speisekarte()
     {
-        return $this->belongsToMany(Speisekarte::class);
+        return $this->belongsToMany(Speisekarte::class)->with('speisekarte_extrazutaten');
     }
 }

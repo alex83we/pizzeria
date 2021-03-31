@@ -40,6 +40,7 @@ Route::middleware('auth')->as('admin.')->group(function () {
         Route::resource('management/permission', 'Admin\PermissionController');
         Route::resource('management/role', 'Admin\RoleController');
         Route::resource('speisekarte', 'Admin\SpeisekarteController');
+        Route::get('api/speisekarte', 'Admin\SpeisekarteController@speisekarteData')->name('api.speisekarte.data');
         Route::resource('firma', 'Admin\FirmasController');
         Route::get('firma/oeffnungszeiten/{oeffnungszeiten}/edit', 'Admin\FirmasController@oeffnungszeitenEdit')->name('oeffnungszeiten.edit');
         Route::post('firma/oeffnungszeiten', 'Admin\FirmasController@oeffnungszeitenStore')->name('oeffnungszeiten.store');
