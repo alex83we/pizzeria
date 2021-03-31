@@ -1,8 +1,8 @@
 <header class="main-header">
     <div class="topbar">
         <div class="container">
-            Öffnungszeiten: Di-Sa: 11:00 - 21:30 So &amp; Feiertage: 15:00 - 21:00 Uhr
-            <span><i class="fa fa-phone"></i> <a href="tel:+4936373159572">036373 - 159572</a></span>
+            <i class="fas fa-history"></i> Öffnungszeiten: Di-Sa: 11:00 - 21:30 So &amp; Feiertage: 15:00 - 21:00 Uhr
+            <span><i class="fa fa-phone"></i> <a href="tel:+4936373159572"> 036373 - 159572</a></span>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
