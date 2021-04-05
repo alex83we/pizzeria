@@ -44,16 +44,22 @@
                         <input type="text" id="ort" class="form-control @error('ort') is-invalid @enderror" name="ort" value="{{ $data->ort }}">
                         <label class="form-label" for="ort">Ort</label>
                     </div>
-                    <div class="form-group col-lg-6">
+                    <div class="form-group col-lg-4">
                         <!-- Telefon -->
                         <input type="text" id="Telefon" class="form-control @error('telefon') is-invalid @enderror" name="telefon" value="{{ $data->telefon }}">
                         <label class="form-label" for="Telefon">Telefon</label>
                     </div>
-                    <div class="form-group col-lg-6">
+                    <div class="form-group col-lg-4">
                         <!-- Mobil -->
                         <input type="text" id="mobil" class="form-control @error('mobil') is-invalid @enderror" name="mobil" value="{{
                             $data->mobil }}">
                         <label class="form-label" for="mobil">Mobil</label>
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <!-- email -->
+                        <input type="text" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{
+                            $data->email }}">
+                        <label class="form-label" for="email">E-Mail-Adresse</label>
                     </div>
                 </div>
                 <div class="d-flex">

@@ -15,6 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/admin/app.js', 'public/js/admin')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/admin/app.scss', 'public/css/admin')
+    .sass('resources/sass/email/email.scss', 'public/css/email')
     .sourceMaps();
 
 mix.copyDirectory('resources/img', 'public/images');

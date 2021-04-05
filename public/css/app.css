@@ -16150,6 +16150,43 @@ a {
   text-decoration: none;
 }
 
+ul.icon-list {
+  padding: 0;
+  margin: 0;
+}
+
+.icon-list li {
+  display: table;
+  margin: 0rem 0rem 0.5rem;
+}
+.icon-list i,
+.icon-list .fas,
+.icon-list .fa,
+.icon-list .far,
+.icon-list .icon {
+  padding-top: 0.28125rem;
+  font-size: 1.1875rem;
+  width: 1%;
+  color: #92bae5;
+  padding-right: 0.9375rem;
+}
+.icon-list i,
+.icon-list span {
+  display: table-cell;
+  vertical-align: top;
+}
+.icon-list #map.half-width {
+  height: 400px;
+  width: 100%;
+}
+.icon-list .social-icons {
+  display: inline-block;
+}
+.icon-list .full-wh {
+  width: 100%;
+  height: 100%;
+}
+
 /* Center the loader */
 #loader {
   position: absolute;

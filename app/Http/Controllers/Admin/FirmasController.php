@@ -68,6 +68,7 @@ class FirmasController extends Controller
                 'ort' => $request->ort,
                 'telefon' => $request->telefon,
                 'mobil' => $request->mobil,
+                'email' => $request->email,
                 'updated_at' => now(),
             ]);
             Toastr::success('Die Firmendaten wurden erfolgreich geändert!', 'ÄNDERUNG ERFOLGREICH');
@@ -80,6 +81,7 @@ class FirmasController extends Controller
             $firma->ort = $request->ort;
             $firma->telefon = $request->telefon;
             $firma->mobil = $request->mobil;
+            $firma->email = $request->email;
             $firma->updated_at = now();
 
             if ($firma->save()) {

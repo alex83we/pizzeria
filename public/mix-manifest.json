@@ -3,6 +3,7 @@
     "/js/admin/app.js": "/js/admin/app.js",
     "/css/app.css": "/css/app.css",
     "/css/admin/app.css": "/css/admin/app.css",
+    "/css/email/email.css": "/css/email/email.css",
     "/images/default.png": "/images/default.png",
     "/images/doener-kebab.jpg": "/images/doener-kebab.jpg",
     "/images/lieferung.jpg": "/images/lieferung.jpg",

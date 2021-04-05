@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\KontaktMail;
 use App\Models\Admin\Category;
 use App\Models\Admin\Firma;
 use App\Models\Admin\Lieferzeiten;
 use App\Models\Admin\Oeffnungszeiten;
 use App\Models\Frontend\Speisekarte;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
 {
@@ -76,7 +79,32 @@ class IndexController extends Controller
 
     public function kontaktIndex()
     {
-        return view('frontend.kontakt');
+        $firma = Firma::firstOrNew();
+        $oeffnungszeitens = Oeffnungszeiten::all();
+        $lieferzeitens = Lieferzeiten::all();
+        return view('frontend.kontakt', compact('firma', 'oeffnungszeitens', 'lieferzeitens'));
+    }
+
+    public function kontaktStore(Request $request)
+    {
+        $this->validate($request, [
+           'name' => 'required|max:255',
+           'email' => 'required|email|max:255',
+           'telefon' => 'required|max:255',
+           'message' => 'required',
+           'datenschutz' => 'required|in:1',
+        ]);
+
+        $kontakt = array(
+            'name' => $request->name,
+            'email' => $request->email,
+            'telefon' => $request->telefon,
+            'message' => nl2br($request->message),
+            'datenschutz' => $request->datenschutz,
+        );
+
+        Mail::to('info@buttstaedter-bistro.de')->send(new KontaktMail($kontakt));
+        return redirect()->route('frontend.index');
     }
 
     public function impressumIndex()

@@ -20,8 +20,13 @@ Route::as('frontend.')->group(function () {
     Route::get('/speisekarte/pdf', 'Frontend\IndexController@speisekartePDFIndex')->name('speisekarte.pdf.index');
     Route::get('/lieferservice', 'Frontend\IndexController@lieferserviceIndex')->name('lieferservice.index');
     Route::get('/kontakt', 'Frontend\IndexController@kontaktIndex')->name('kontakt.index');
+    Route::post('/kontakt', 'Frontend\IndexController@kontaktStore')->name('kontakt.store');
     Route::get('/impressum', 'Frontend\IndexController@impressumIndex')->name('impressum.index');
     Route::get('/datenschutz', 'Frontend\IndexController@datenschutzIndex')->name('datenschutz.index');
+});
+
+Route::get('/emails', function () {
+    view('emails.kontakt');
 });
 
 // Admin menu
