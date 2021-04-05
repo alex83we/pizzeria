@@ -1,13 +1,18 @@
+@php
+    $firma = \App\Models\Admin\Firma::first();
+    $oeffnungszeiten = \App\Models\Admin\Oeffnungszeiten::all();
+    $lieferzeiten = \App\Models\Admin\Lieferzeiten::all();
+@endphp
 <header class="main-header">
     <div class="topbar">
         <div class="container">
-            <i class="fas fa-history"></i> Öffnungszeiten: Di-Sa: 11:00 - 21:30 So &amp; Feiertage: 15:00 - 21:00 Uhr
-            <span><i class="fa fa-phone"></i> <a href="tel:+4936373159572"> 036373 - 159572</a></span>
+            <i class="fas fa-history"></i> Öffnungszeiten: @foreach($oeffnungszeiten as $data) @if($data->id == 1){{ $data->wochentag . ' ' . $data->von . ' - ' . $data->bis }}@endif @if($data->id == 2){{ '& ' . $data->wochentag . ' ' . $data->von . ' - ' . $data->bis . ' Uhr' }}@endif @endforeach
+            <span><i class="fa fa-phone"></i> <a href="tel:{{ str_replace(' - ', '', $firma->telefon) }}"> {{ $firma->telefon }}</a></span>
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="./">{{ config('app.name') }}</a>
+            <a class="navbar-brand" href="./">{{ $firma->firmenname }}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

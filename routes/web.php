@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::as('frontend.')->group(function () {
     Route::get('/', 'Frontend\IndexController@index')->name('index');
     Route::get('/speisekarte', 'Frontend\IndexController@speisekarteIndex')->name('speisekarte.index');
+    Route::get('/speisekarte/pdf', 'Frontend\IndexController@speisekartePDFIndex')->name('speisekarte.pdf.index');
     Route::get('/lieferservice', 'Frontend\IndexController@lieferserviceIndex')->name('lieferservice.index');
     Route::get('/kontakt', 'Frontend\IndexController@kontaktIndex')->name('kontakt.index');
     Route::get('/impressum', 'Frontend\IndexController@impressumIndex')->name('impressum.index');

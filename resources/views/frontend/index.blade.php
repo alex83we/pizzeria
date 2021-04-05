@@ -10,7 +10,7 @@
     <section id="masthead" class="masthead d-flex pb-5">
         <div class="container text-center text-white my-auto">
             <div class="hero-text">
-                <h1>Ihr Buttstädter Bisto in Buttstädt</h1>
+                <h1>Ihr {{ $firma->firmenname }} in {{ $firma->ort }}</h1>
                 <h2>100% Lecker</h2>
                 <h3>Döner Burger Pizza.</h3>
                 <h3>Ofenfrisch.</h3>
@@ -100,7 +100,7 @@
                             <h2 class="text-uppercase solid-weight">Lieferung</h2>
                             <div class="line"></div>
                         </div>
-                        <p>Wir beliefern sie von Dienstag – Samstag in der Zeit von 11:00 - 13:30 und von 17:00 - 20:30 Uhr und am Sonntag oder Feiertagen ab 17:00 - 20:30 Uhr.</p>
+                        <p>Wir beliefern sie von Dienstag – Samstag in der Zeit von @foreach($lieferzeiten as $data) @if($data->id == 1) {{ $data->von . ' - ' . $data->bis . ' Uhr' }} @endif @endforeach und von @foreach($lieferzeiten as $data) @if($data->id == 2) {{ $data->von . ' - ' . $data->bis . ' Uhr' }} @endif @endforeach und am Sonntag oder Feiertagen ab @foreach($lieferzeiten as $data) @if($data->id == 3) {{ $data->von . ' - ' . $data->bis . ' Uhr.' }} @endif @endforeach</p>
                         <p>In der Regel können sie schon, 30 Minuten später ihr Essen verzehren.</p>
                     </div>
                 </div>
@@ -108,6 +108,7 @@
         </div>
     </section>
 
+    @if(false)
     <!-- Bistro -->
     <section class="Restaurant">
         <div class="container">
@@ -127,11 +128,12 @@
             </div>
             <div class="Restaurant__button">
                 <div class="d-grid col-md-6 col-lg-4 mx-auto text-center">
-                    <button class="btn btn-blue-dark" type="button">Speisekarte als PDF</button>
+                    <a class="btn btn-blue-dark" href="./files/Bistro_Buttstädt.pdf" download="Bistro_Buttstädt">Speisekarte als PDF</a>
                 </div>
             </div>
         </div>
     </section>
+    @endif
 @endsection
 
 @push('js')
