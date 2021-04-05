@@ -219,8 +219,10 @@
 @import "bistro";
 
 /* Speisekarte */
-/*@import "speisekarte";*/
 @import "speisekarte-filter";
+
+/* Lieferservice */
+@import "lieferservice";
 
 /* Footer */
 @import "_footer.scss";

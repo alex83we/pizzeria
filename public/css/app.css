@@ -16572,7 +16572,6 @@ a {
 }
 
 /* Speisekarte */
-/*@import "speisekarte";*/
 .icon-search:before {
   font-family: "Font Awesome 5 Free";
   content: "";
@@ -17104,6 +17103,153 @@ a {
 }
 .beilagen-ausklappen .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
   border-left: 0;
+}
+
+/* Lieferservice */
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lieferservice {
+  position: relative;
+  padding: 3.125rem 0rem 1.875rem;
+}
+.lieferservice .title-lieferservice {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2.8125rem;
+}
+.lieferservice .title-lieferservice h2 {
+  position: relative;
+  color: #313e4c;
+  font-weight: 800;
+  line-height: 1.2;
+  font-family: "Barlow", sans-serif;
+}
+.lieferservice .title-lieferservice .text {
+  position: relative;
+  color: #313e4c;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.9em;
+  margin-top: 1.25rem;
+}
+.lieferservice .preis-tabs {
+  position: relative;
+  z-index: 2;
+}
+.lieferservice .preis-tabs .tab-content .tab {
+  position: relative;
+  display: none;
+}
+.lieferservice .preis-tabs .tab-content .tab.active-tab {
+  display: block;
+}
+.lieferservice .preis-tabs .tab-content .tab.active-tab .preis-block {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+.lieferservice .preis-tabs .tab-content .tab .preis-block {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.lieferservice .preis-block {
+  position: relative;
+  margin-bottom: 1.875rem;
+  transition: all 900ms ease;
+}
+.lieferservice .preis-block .inner-box {
+  position: relative;
+  box-shadow: 0rem 0rem 1.5625rem rgba(0, 0, 0, 0.1);
+}
+.lieferservice .preis-block .inner-box .upper-box {
+  position: relative;
+  padding: 2.8125rem 1.875rem;
+  text-align: center;
+  transition: all 300ms ease;
+  box-shadow: 0rem 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
+}
+.lieferservice .preis-block .inner-box .upper-box:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0;
+  background-color: #92bae5;
+  transition: all 600ms ease;
+}
+.lieferservice .preis-block .inner-box .upper-box .title {
+  position: relative;
+  color: #313e4c;
+  font-weight: 800;
+  line-height: 1.2em;
+  font-size: 2.75rem;
+  transition: all 300ms ease;
+  font-family: "Barlow", sans-serif;
+}
+.lieferservice .preis-block .inner-box .upper-box .preis {
+  position: relative;
+  color: #92bae5;
+  font-weight: 800;
+  line-height: 1.2em;
+  font-size: 3.75rem;
+  margin-top: 0.625rem;
+  transition: all 300ms ease;
+  font-family: "Barlow", sans-serif;
+}
+.lieferservice .preis-block .inner-box .upper-box .preis span {
+  position: relative;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #313e4c;
+  display: block;
+  line-height: 1em;
+  margin-top: 0.625rem;
+  transition: all 300ms ease;
+}
+.lieferservice .preis-block .inner-box:hover .upper-box:before {
+  height: 100%;
+}
+.lieferservice .preis-block .inner-box:hover .upper-box .preis span,
+.lieferservice .preis-block .inner-box:hover .upper-box .preis,
+.lieferservice .preis-block .inner-box:hover .upper-box .title {
+  color: #ffffff;
+}
+.lieferservice .preis-block .inner-box .lower-content {
+  position: relative;
+  padding: 2.8125rem 2.25rem 2.1875rem;
+}
+.lieferservice .preis-block .inner-box .lower-content .preis-liste {
+  position: relative;
+  margin-bottom: 2.8125rem;
+}
+.lieferservice .preis-block .inner-box .lower-content .preis-liste li {
+  position: relative;
+  color: #313e4c;
+  font-size: 1rem;
+  margin-bottom: 1.375rem;
+  padding-left: 2.1875rem;
+}
+.lieferservice .preis-block .inner-box .lower-content .preis-liste li:before {
+  position: absolute;
+  left: 0;
+  top: -0.25rem;
+  content: "";
+  color: #92bae5;
+  font-size: 1.375rem;
+  font-weight: 400;
+  display: block;
+  font-family: "Font Awesome 5 Free";
+}
+.lieferservice .preis-block .inner-box .lower-content .preis-liste li:last-child {
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 2.75rem;
 }
 
 /* Footer */

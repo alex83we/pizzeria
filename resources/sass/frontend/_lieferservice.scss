@@ -1,0 +1,173 @@
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lieferservice {
+  position: relative;
+  padding: em(50) em(0) em(30);
+
+  .title-lieferservice {
+    position: relative;
+    z-index: 1;
+    margin-bottom: em(45);
+
+    h2 {
+      position: relative;
+      color: $blue-dark;
+      font-weight: 800;
+      line-height: 1.2;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .text {
+      position: relative;
+      color: $blue-dark;
+      font-size: em(16);
+      font-weight: 400;
+      line-height: 1.9em;
+      margin-top: em(20);
+    }
+  }
+
+  .preis-tabs {
+    position: relative;
+    z-index: 2;
+
+    .tab-content {
+      .tab {
+        &.active-tab {
+          display: block;
+
+          .preis-block {
+            opacity: 1;
+            transform: rotate(0deg);
+          }
+        }
+
+        position: relative;
+        display: none;
+
+        .preis-block {
+          opacity: 0;
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .preis-block {
+    position: relative;
+    margin-bottom: em(30);
+    transition: all 900ms ease;
+
+    .inner-box {
+      position: relative;
+      box-shadow: em(0) em(0) em(25) rgb(0 0 0 / 10%);
+
+      .upper-box {
+        position: relative;
+        padding: em(45) em(30);
+        text-align: center;
+        transition: all 300ms ease;
+        box-shadow: em(0) em(10) em(20) rgb(0 0 0 / 10%);
+
+        &:before {
+          position: absolute;
+          content: '';
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 0;
+          background-color: $blue-light;
+          transition: all 600ms ease;
+        }
+
+        .title {
+          position: relative;
+          color: $blue-dark;
+          font-weight: 800;
+          line-height: 1.2em;
+          font-size: em(44);
+          transition: all 300ms ease;
+          font-family: 'Barlow', sans-serif;
+        }
+
+        .preis {
+          position: relative;
+          color: $blue-light;
+          font-weight: 800;
+          line-height: 1.2em;
+          font-size: em(60);
+          margin-top: em(10);
+          transition: all 300ms ease;
+          font-family: 'Barlow', sans-serif;
+
+          span {
+            position: relative;
+            font-weight: 400;
+            font-size: em(18);
+            color: $blue-dark;
+            display: block;
+            line-height: 1em;
+            margin-top: em(10);
+            transition: all 300ms ease;
+          }
+        }
+      }
+
+      &:hover {
+        .upper-box {
+          &:before {
+            height: 100%;
+          }
+
+          .preis span,
+          .preis,
+          .title {
+            color: $white;
+          }
+        }
+      }
+
+      .lower-content {
+        position: relative;
+        padding: em(45) em(36) em(35);
+
+        .preis-liste {
+          position: relative;
+          margin-bottom: em(45);
+
+          li {
+            position: relative;
+            color: $blue-dark;
+            font-size: em(16);
+            margin-bottom: em(22);
+            padding-left: em(35);
+
+            &:before {
+              position: absolute;
+              left: 0;
+              top: em(-4);
+              content: '\f058';
+              color: $blue-light;
+              font-size: em(22);
+              font-weight: 400;
+              display: block;
+              font-family: "Font Awesome 5 Free";
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+h2 {
+  font-size: em(44);
+}
