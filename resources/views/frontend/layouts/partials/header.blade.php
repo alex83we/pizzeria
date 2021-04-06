@@ -18,10 +18,10 @@
             </button>
             <div class="collapse navbar-collapse navigation" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="{{ url('/') }}">Home</a>
-                    <a class="nav-link {{ Request::is('speisekarte') ? 'active' : '' }}" href="{{ url('speisekarte') }}">Speisekarte</a>
-                    <a class="nav-link {{ Request::is('lieferservice') ? 'active' : '' }}" href="{{ url('lieferservice') }}">Lieferservice</a>
-                    <a class="nav-link {{ Request::is('kontakt') ? 'active' : '' }}" href="{{ url('kontakt') }}">Kontakt</a>
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="{{ route('frontend.index') }}">Home</a>
+                    <a class="nav-link {{ Request::is('speisekarte') ? 'active' : '' }}" href="{{ route('frontend.speisekarte.index') }}">Speisekarte</a>
+                    <a class="nav-link {{ Request::is('lieferservice') ? 'active' : '' }}" href="{{ route('frontend.lieferservice.index') }}">Lieferservice</a>
+                    <a class="nav-link {{ Request::is('kontakt') ? 'active' : '' }}" href="{{ route('frontend.kontakt.index') }}">Kontakt</a>
                 </div>
             </div>
         </div>
