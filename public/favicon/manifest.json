@@ -1,5 +1,6 @@
 {
  "name": "Buttstädter Bistro",
+ "short_name": "Bistro",
  "icons": [
   {
    "src": "\/favicon\/android-icon-36x36.png",
@@ -37,5 +38,11 @@
    "type": "image\/png",
    "density": "4.0"
   }
- ]
+ ],
+ "lang": "de-DE",
+ "start_url": "/",
+ "theme_color": "#101519",
+ "background_color": "#ffff00",
+ "display": "standalone",
+ "orientation": "any"
 }

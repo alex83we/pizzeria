@@ -25,8 +25,8 @@ Route::as('frontend.')->group(function () {
     Route::get('/datenschutz', 'Frontend\IndexController@datenschutzIndex')->name('datenschutz.index');
 });
 
-Route::get('/emails', function () {
-    view('emails.kontakt');
+Route::get('/offline', function () {
+    view('vendor.laravelpwa.offline');
 });
 
 // Admin menu

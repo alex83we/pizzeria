@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="expires" content="86400">
     <meta name="author" content="Alexander Guthmann">
     <meta name="publisher" content="{{ config('app.name') }}">
     <meta name="copyright" content="Alexander Guthmann">
@@ -67,6 +68,7 @@ Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke')">
     <link rel="stylesheet" href="lib/owlcarousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="lib/owlcarousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @laravelPWA
     @stack('css')
 </head>
 <body>
@@ -77,7 +79,7 @@ Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke')">
 <!-- Footer -->
 <footer>
     <div class="footer__copyright">
-        &copy {{ date('Y') }} {{ config('app.name') }} | Created by <a href="https://www.thueringer-tuning-freunde.de/team/alex" target="_blank">Alex</a> | <a href="{{ route('frontend.impressum.index') }}">{{ __('Legal Notice') }}</a> | <a href="{{ route('frontend.datenschutz.index') }}">{{ __('Privacy') }}</a> |
+        &copy {{ date('Y') }} {{ config('app.name') }} | Created by <a href="https://www.thueringer-tuning-freunde.de/team/alex" target="_blank" rel="noopener">Alex</a> | <a href="{{ route('frontend.impressum.index') }}">{{ __('Legal Notice') }}</a> | <a href="{{ route('frontend.datenschutz.index') }}">{{ __('Privacy') }}</a> |
         <span>{{ __('all final prices incl. 19% VAT.') }}</span>
     </div>
 </footer>
