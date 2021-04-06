@@ -22,7 +22,7 @@
 <!-- Footer -->
 <footer>
     <div class="footer__copyright">
-        &copy {{ date('Y') }} {{ config('app.name') }} | <a href="./impressum">{{ __('Legal Notice') }}</a> | <a href="./datenschutz">{{ __('Privacy') }}</a> |
+        &copy {{ date('Y') }} {{ config('app.name') }} | Created by <a href="https://www.thueringer-tuning-freunde.de/team/alex" target="_blank">Alex</a> | <a href="./impressum">{{ __('Legal Notice') }}</a> | <a href="./datenschutz">{{ __('Privacy') }}</a> |
         <span>{{ __('all final prices incl. 19% VAT.') }}</span>
     </div>
 </footer>

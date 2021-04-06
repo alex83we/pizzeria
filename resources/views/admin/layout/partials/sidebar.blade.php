@@ -63,6 +63,12 @@
                         <p>Benachrichtigung</p>
                     </a>
                 </li>--}}
+                <li class="nav-item">
+                    <a href="https://webmail.buttstaedter-bistro.de" target="_blank" class="nav-link">
+                        <i class="fas fa-envelope nav-icon"></i>
+                        <p>Webmail</p>
+                    </a>
+                </li>
                 <li class="nav-header">Firmen Einstellung</li>
                 <li class="nav-item">
                     <a href="{{ route('admin.firma.index') }}" class="nav-link {{ Request::is('admin/firma') ? 'active' : '' }}">
