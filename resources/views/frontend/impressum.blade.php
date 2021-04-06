@@ -1,6 +1,7 @@
 @extends('frontend.layouts.frontend')
 
 @section('title'){{ __('Legal Notice') }}@endsection
+@section('meta-description')Hier finden sie unsere rechtlichen Angaben (Impressum).@endsection
 
 @push('css')
 

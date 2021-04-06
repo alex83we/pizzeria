@@ -1,6 +1,7 @@
 @extends('frontend.layouts.frontend')
 
 @section('title'){{ __('Delivery Service') }}@endsection
+@section('meta-description')Hier können sie unsere Liefergebiete einsehen. Und erhalten Informationen zu unserem Mindestbestellwerten für die außer Haus Lieferung.@endsection
 
 @push('css')
 
@@ -10,7 +11,7 @@
     <section class="lieferservice">
         <div class="container">
             <div class="title-lieferservice text-center">
-                <h2>Lieferservice</h2>
+                <h1>Lieferservice</h1>
                 <div class="text">Liefergebiete und Mindestbestellwert:</div>
             </div>
             <div class="preis-tabs tabs-boxen">
@@ -21,7 +22,7 @@
                                 <div class="preis-block col-lg-4 col-md-6 col-sm-12">
                                     <div class="inner-box">
                                         <div class="upper-box">
-                                            <div class="title">Region 1</div>
+                                            <h1 class="title">Region 1</h1>
                                             <div class="preis">15,00 €</div>
                                         </div>
                                         <div class="lower-content">

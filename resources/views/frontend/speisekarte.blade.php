@@ -1,6 +1,7 @@
 @extends('frontend.layouts.frontend')
 
 @section('title'){{ __('Menu') }}@endsection
+@section('meta-description')Hier finden sie unsere Speisekarte. Die immer auf dem aktuellen Stand ist.@endsection
 
 @push('css')
 
@@ -63,18 +64,18 @@
                                     <div class="speisekarte__mahlzeiten-gruppe-kategorie">
                                         <div class="lazy speisekarte__kategorie-bilder-container" data-bg="{{ Storage::disk('public')->url('images/kategorie/'.$kategorie->images) }}" data-was-processed="true" style="background-image: url('{{ Storage::disk('public')->url('images/kategorie/'.$kategorie->images) }}')"></div>
                                         <div class="speisekarte__kategorie-inhalt">
-                                            <div class="speisekarte__kategorie-name">
+                                            <h1 class="speisekarte__kategorie-name" style="margin-bottom: 0;">
                                                 {{ $kategorie->title }}
-                                            </div>
+                                            </h1>
                                             @if(false)
                                             <div class="speisekarte__kategorie-zeitliche-beschraenkung">
                                                 <i class="fas fa-clock"></i>
                                                 Achtung: Alle Produkte in dieser Kategorie können nur von: 17:00 bis 20:00 geliefert werden.
                                             </div>
                                             @endif
-                                            <div class="speisekarte__kategorie-beschreibung js-content-toggle">
+                                            <h2 class="speisekarte__kategorie-beschreibung js-content-toggle">
                                                 {{ $kategorie->description }}
-                                            </div>
+                                            </h2>
                                         </div>
                                     </div>
 

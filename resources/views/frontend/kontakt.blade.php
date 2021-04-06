@@ -1,6 +1,7 @@
 @extends('frontend.layouts.frontend')
 
 @section('title'){{ __('Contact') }}@endsection
+@section('meta-description')Hier können sie mit uns in Kontakt treten oder unseren Standort anhand von Google Maps einsehen.@endsection
 
 @push('css')
 
@@ -18,7 +19,7 @@
                 <div class="col-md-6 col-sm-8">
                     <div class="py-7 pr-7 xs-pr-0">
                         <div class="heading-block">
-                            <h2 class="text-uppercase solid-weight">Adresse</h2>
+                            <h1 class="text-uppercase solid-weight">Adresse</h1>
                             <span class="text-uppercase light-weight"></span>
                             <div class="line"></div>
                         </div>

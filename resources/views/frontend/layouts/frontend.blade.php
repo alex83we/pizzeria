@@ -8,8 +8,8 @@
     <meta name="author" content="Alexander Guthmann">
     <meta name="publisher" content="{{ config('app.name') }}">
     <meta name="copyright" content="Alexander Guthmann">
-    <meta name="description" content="Buttstädter Bistro, Windhöfe 31, 99628, Buttstädt, Ihre Pizzeria in Buttstädt. Wir bieten ihnen hier unsere Speisekarte, an die immer aktuell ist und sie können dann bei uns per Telefon bestellen.
-Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke">
+    <meta name="description" content="@yield('meta-description', 'Buttstädter Bistro, Windhöfe 31, 99628, Buttstädt, Ihre Pizzeria in Buttstädt. Wir bieten ihnen hier unsere Speisekarte, an die immer aktuell ist und sie können dann bei uns per Telefon bestellen.
+Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke')">
     <meta name="keywords" content="Burger, Pizza, Döner, Kurdische, Gerichte, Salat, Getränke, Nudeln, Steinofenpizza, Pide, Spezialitäten, Snacks, Aufläufe, Buttstädt, Bistro, Lieferservice, Essen, auf, Rädern, Windhöfe, Mindestbestellwert">
     <meta name="page-topic" content="Dienstleistung">
     <meta name="audience" content="Alle">
@@ -18,24 +18,46 @@ Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke">
     <meta name="image" content="https://www.buttstaedter-bistro.de/images/logo.jpg">
     <!-- Schema.org for Google -->
     <meta itemprop="name" content="{{ config('app.name') }} | @yield('title')">
-    <meta itemprop="description" content="Buttstädter Bistro, Windhöfe 31, 99628, Buttstädt, Ihre Pizzeria in Buttstädt. Wir bieten ihnen hier unsere Speisekarte, an die immer aktuell ist und sie können dann bei uns per Telefon bestellen. Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke">
+    <meta itemprop="description" content="@yield('meta-description', 'Buttstädter Bistro, Windhöfe 31, 99628, Buttstädt, Ihre Pizzeria in Buttstädt. Wir bieten ihnen hier unsere Speisekarte, an die immer aktuell ist und sie können dann bei uns per Telefon bestellen.
+Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke')">
     <meta itemprop="image" content="https://www.buttstaedter-bistro.de/images/logo.jpg">
     <!-- Open Graph general (Facebook, Pinterest & Google+) -->
     <meta property="og:title" content="{{ config('app.name') }} | @yield('title')">
     <meta property="og:site_name" content="{{ config('app.name') }}">
     <meta property="og:url" content="{{ url()->full() }}">
-    <meta property="og:description" content="Buttstädter Bistro, Windhöfe 31, 99628, Buttstädt, Ihre Pizzeria in Buttstädt. Wir bieten ihnen hier unsere Speisekarte, an die immer aktuell ist und sie können dann bei uns per Telefon bestellen.">
+    <meta property="og:description" content="@yield('meta-description', 'Buttstädter Bistro, Windhöfe 31, 99628, Buttstädt, Ihre Pizzeria in Buttstädt. Wir bieten ihnen hier unsere Speisekarte, an die immer aktuell ist und sie können dann bei uns per Telefon bestellen.
+Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke')">
     <meta property="og:locale" content="de_DE">
     <meta property="og:type" content="restaurant.menu">
     <meta property="og:image" content="https://www.buttstaedter-bistro.de/images/logo.jpg">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ config('app.name') }} | @yield('title')">
-    <meta name="twitter:description" content="Buttstädter Bistro, Windhöfe 31, 99628, Buttstädt, Ihre Pizzeria in Buttstädt. Wir bieten ihnen hier unsere Speisekarte, an die immer aktuell ist und sie können dann bei uns per Telefon bestellen. Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke">
+    <meta name="twitter:description" content="@yield('meta-description', 'Buttstädter Bistro, Windhöfe 31, 99628, Buttstädt, Ihre Pizzeria in Buttstädt. Wir bieten ihnen hier unsere Speisekarte, an die immer aktuell ist und sie können dann bei uns per Telefon bestellen.
+Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke')">
     <meta name="twitter:site" content="@buttstaedter-bistro">
-    <meta name="twitter:creator" content="@uttstaedter-bistro">
+    <meta name="twitter:creator" content="@buttstaedter-bistro">
     <meta name="twitter:image" content="https://www.buttstaedter-bistro.de/images/logo.jpg">
     <link rel="canonical" href="{{ url()->full() }}"/>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('favicon/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('favicon/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('favicon/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('favicon/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('favicon/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('favicon/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('favicon/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('favicon/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('favicon/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('favicon/manifest.json') }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ asset('favicon/ms-icon-144x144.png') }}">
+    <meta name="theme-color" content="#ffffff">
 
 
     <!-- CSRF Token -->
