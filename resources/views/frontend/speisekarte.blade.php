@@ -82,7 +82,7 @@
                                         @if($speisekarte->categories_id == $kategorie->id)
                                             <div class="speisekarte__mahlzeiten">
                                                 <div class="mahlzeiten-container js-mahlzeiten-container" id="{{ $speisekarte->id }}">
-                                                    <div class="js-mahlzeit-item" itemscope itemtype="http://schema.org/Product">
+                                                    <div class="js-mahlzeit-item" itemscope itemtype="http://schema.org/Offer">
                                                         <div class="mahlzeit__wrapper">
                                                             <div class="mahlzeit__beschreibung-texte">
 {{--                                                                <a href="#speisekarte-{{ $speisekarte->id }}" class="mahlzeit__beschreibung-texte" role="button" id="{{ str_replace(' ', '_', $speisekarte->speisekarte_name) }}" data-toggle="collapse" aria-expanded="false" aria-controls="speisekarte-{{ $speisekarte->id }}">--}}
@@ -99,7 +99,7 @@
                                                                         <div class="mahlzeit__beschreibung-waehle-aus">
                                                                             @if(false){{ 'Wahl aus: ' . $speisekarte->slug }}@endif
                                                                         </div>
-                                                                        <div itemprop="price" class="mahlzeit__preis">{{ $speisekarte->speisekarte_basispreis . ' €' }}</div>
+                                                                        <div itemprop="price" content="{{ $speisekarte->speisekarte_basispreis }}" class="mahlzeit__preis">{{ $speisekarte->speisekarte_basispreis . ' €' }}</div>
                                                                     </span>
 {{--                                                                </a>--}}
                                                             </div>
