@@ -398,6 +398,6 @@
   "edit menu": "Speisekarte bearbeiten",
   "Add dish": "Gericht hinzufügen",
   "Menu edit": "Speisekarte bearbeiten",
-  "Service unavailable": "Dienst nicht verfügbar",
-  "Sorry the page you are looking for currently not found, please check the URL and then refresh your browser.": "Entschuldigung, die Seite, nach der Sie suchen, wird derzeit nicht gefunden. Überprüfen Sie die URL und aktualisieren Sie dann Ihren Browser."
+  "Service Temporarily Unavailable": "Dienst vorübergehend nicht verfügbar",
+  "The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later.": "Der Server kann Ihre Anfrage aufgrund von Wartungsausfällen oder Kapazitätsproblemen vorübergehend nicht bearbeiten. Bitte versuchen Sie es später noch einmal."
 }
