@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <script src="https://5f3c395.ccm19.de/app/public/ccm19.js?apiKey=928d8942ad49b5b54e0b263b3d1c7a6caadd02c1c42b3590&amp;domain=6921a86" referrerpolicy="origin"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,7 +61,7 @@ Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke')">
 <!-- Footer -->
 <footer>
     <div class="footer__copyright">
-        &copy {{ date('Y') }} {{ config('app.name') }} | Created by <a href="https://www.thueringer-tuning-freunde.de/team/alex" target="_blank" rel="noopener">Alex</a> | <a href="{{ route('frontend.impressum.index') }}">{{ __('Legal Notice') }}</a> | <a href="{{ route('frontend.datenschutz.index') }}">{{ __('Privacy') }}</a> |
+        &copy {{ date('Y') }} {{ config('app.name') }} | Created by <a href="https://www.thueringer-tuning-freunde.de/team/alex" target="_blank" rel="noopener">Alex</a> | <a href="{{ route('frontend.impressum.index') }}">{{ __('Legal Notice') }}</a> | <a href="{{ route('frontend.datenschutz.index') }}">{{ __('Privacy') }}</a> | <a href="#" onclick="CCM.openWidget();return false;">Cookie bearbeiten</a> |
         <span>{{ __('all final prices incl. 19% VAT.') }}</span>
     </div>
 </footer>
