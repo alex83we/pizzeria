@@ -22,6 +22,7 @@
                     <a class="nav-link {{ Request::is('speisekarte') ? 'active' : '' }}" href="{{ route('frontend.speisekarte.index') }}">Speisekarte</a>
                     <a class="nav-link {{ Request::is('lieferservice') ? 'active' : '' }}" href="{{ route('frontend.lieferservice.index') }}">Lieferservice</a>
                     <a class="nav-link {{ Request::is('kontakt') ? 'active' : '' }}" href="{{ route('frontend.kontakt.index') }}">Kontakt</a>
+                    <div class="add-button nav-link" style="color: red !important; font-weight: bold;">Als App installieren</div>
                 </div>
             </div>
         </div>

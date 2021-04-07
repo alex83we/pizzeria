@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta http-equiv="expires" content="86400">
     <meta name="author" content="Alexander Guthmann">
     <meta name="publisher" content="{{ config('app.name') }}">
@@ -67,6 +67,7 @@ Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke')">
 
 <!-- Back to Top -->
 <div id="back-to-top"><button class="btn top arrow" style="line-height: 0;"><i class="fa fa-chevron-up"></i></button></div>
+
 
 <!-- Optional JavaScript -->
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
