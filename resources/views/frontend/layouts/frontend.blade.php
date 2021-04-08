@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJRB94L93Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HJRB94L93Z');
+    </script>
     <script src="https://5f3c395.ccm19.de/app/public/ccm19.js?apiKey=928d8942ad49b5b54e0b263b3d1c7a6caadd02c1c42b3590&amp;domain=6921a86" referrerpolicy="origin"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
