@@ -170,6 +170,7 @@ return [
         Brian2694\Toastr\ToastrServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Spatie\Analytics\AnalyticsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -236,6 +237,7 @@ return [
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
 
     ],
 
