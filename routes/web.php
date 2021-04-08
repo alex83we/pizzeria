@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,10 @@ Route::as('frontend.')->group(function () {
 
 Route::get('/offline', function () {
     view('vendor.laravelpwa.offline');
+});
+
+Route::get('/sitemap', function () {
+     SitemapGenerator::create('https://www.buttstaedter-bistro.de')->writeToFile('sitemap.xml');
 });
 
 // Admin menu
