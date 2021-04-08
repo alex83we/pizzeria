@@ -6,8 +6,13 @@
     "/css/email/email.css": "/css/email/email.css",
     "/images/default.png": "/images/default.png",
     "/images/doener-kebab.jpg": "/images/doener-kebab.jpg",
+    "/images/doener-kebab.webp": "/images/doener-kebab.webp",
+    "/images/doener-kebab_1.webp": "/images/doener-kebab_1.webp",
     "/images/lieferung.jpg": "/images/lieferung.jpg",
+    "/images/lieferung.webp": "/images/lieferung.webp",
     "/images/logo.svg": "/images/logo.svg",
     "/images/Pizzaofen.jpg": "/images/Pizzaofen.jpg",
-    "/images/Pizzeria.jpg": "/images/Pizzeria.jpg"
+    "/images/Pizzaofen.webp": "/images/Pizzaofen.webp",
+    "/images/Pizzeria.jpg": "/images/Pizzeria.jpg",
+    "/images/Pizzeria.webp": "/images/Pizzeria.webp"
 }

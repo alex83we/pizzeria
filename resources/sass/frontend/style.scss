@@ -42,7 +42,7 @@
     height: auto;
     padding-bottom: em(8);
 
-    background: url("../../img/Pizzeria.jpg") fixed;
+    background: url("../../img/Pizzeria.webp") fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -103,14 +103,14 @@
 /* Lieferung & Abholung */
 .callout {
     padding: 15em 0;
-    background: linear-gradient(90deg,rgba(18,18,18,.4) 35%,rgba(18,18,18,.6) 100%),url(../../img/Pizzaofen.jpg) fixed;
+    background: linear-gradient(90deg,rgba(18,18,18,.4) 35%,rgba(18,18,18,.6) 100%),url(../../img/Pizzaofen.webp) fixed;
     background-repeat: no-repeat;
     background-size: cover;
   }
   
   .callout-1 {
     padding: 15em 0;
-    background: linear-gradient(90deg,rgba(18,18,18,.4) 35%,rgba(18,18,18,.6) 100%),url(../../img/lieferung.jpg) fixed;
+    background: linear-gradient(90deg,rgba(18,18,18,.4) 35%,rgba(18,18,18,.6) 100%),url(../../img/lieferung.webp) fixed;
     background-repeat: no-repeat;
     background-size: cover;
   }

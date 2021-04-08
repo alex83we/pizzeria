@@ -71,7 +71,7 @@
 
     <!-- Lieferservice & Abholung -->
     <section class="p-0 pos-r">
-        <div class="fullbg bg-right-pos" style="background-image: url(./images/Pizzaofen.jpg)"></div>
+        <div class="fullbg bg-right-pos" style="background-image: url(./images/Pizzaofen.webp)"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-6 min-height">
@@ -90,7 +90,7 @@
     </section>
 
     <section class="p-0 pos-r grey-bg">
-        <div class="fullbg bg-pos-right" style="background-image: url(./images/lieferung.jpg);"></div>
+        <div class="fullbg bg-pos-right" style="background-image: url(./images/lieferung.webp);"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 min-height">
