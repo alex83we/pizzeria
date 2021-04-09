@@ -15,7 +15,7 @@ use Spatie\Sitemap\SitemapGenerator;
 */
 
 // Frontend
-Route::as('frontend.')->group(function () {
+Route::middleware('cache.headers:public;max_age=31536000;etag')->as('frontend.')->group(function () {
     Route::get('/', 'Frontend\IndexController@index')->name('index');
     Route::get('/speisekarte', 'Frontend\IndexController@speisekarteIndex')->name('speisekarte.index');
     Route::get('/speisekarte/pdf', 'Frontend\IndexController@speisekartePDFIndex')->name('speisekarte.pdf.index');

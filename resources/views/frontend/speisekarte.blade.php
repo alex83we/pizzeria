@@ -62,7 +62,7 @@
                             @foreach($category as $key => $kategorie)
                                 <div class="speisekarte__mahlzeiten-gruppe" id="{{ $kategorie->slug }}" anchor-id="{{ $kategorie->slug }}">
                                     <div class="speisekarte__mahlzeiten-gruppe-kategorie">
-                                        <div class="lazy speisekarte__kategorie-bilder-container" data-bg="{{ Storage::disk('public')->url('images/kategorie/'.$kategorie->images) }}" data-was-processed="true" style="background-image: url('{{ Storage::disk('public')->url('images/kategorie/'.$kategorie->images) }}')"></div>
+                                        <div class="lazy speisekarte__kategorie-bilder-container" data-bg="{{ url('images/kategorie/'.$kategorie->images) }}" data-was-processed="true" style="background-image: url('{{ url('images/kategorie/'.$kategorie->images) }}')"></div>
                                         <div class="speisekarte__kategorie-inhalt">
                                             <h1 class="speisekarte__kategorie-name" style="margin-bottom: 0;">
                                                 {{ $kategorie->title }}

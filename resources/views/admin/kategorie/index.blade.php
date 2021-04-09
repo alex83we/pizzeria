@@ -35,7 +35,7 @@
                         <td class="align-middle fw-bolder fs-6">{{ $kategorie->description }}</td>
                         <td class="align-middle fw-bolder fs-6">
                             @if ($kategorie->images == true)
-                                <img src="{{ Storage::disk('public')->url('images/kategorie/'.$kategorie->images) }}" alt="{{ $kategorie->title }}" style="width: 150px;">
+                                <img src="{{ url('images/kategorie/'.$kategorie->images) }}" alt="{{ $kategorie->title }}" style="width: 150px;">
                             @endif
                         </td>
                         @hasanyrole('Admin|Inhaber')

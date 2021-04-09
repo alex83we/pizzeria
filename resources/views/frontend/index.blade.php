@@ -3,7 +3,8 @@
 @section('title'){{ __('Home') }}@endsection
 
 @push('css')
-
+    {{--<link rel="stylesheet" href="{{ asset('lib/owlcarousel/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/owlcarousel/dist/assets/owl.theme.default.min.css') }}">--}}
 @endpush
 
 @section('content')
@@ -137,7 +138,7 @@
 @endsection
 
 @push('js')
-
+{{--    <script src="{{ asset('lib/owlcarousel/dist/owl.carousel.min.js') }}"></script>--}}
 @endpush
 
 @push('scriptjs')

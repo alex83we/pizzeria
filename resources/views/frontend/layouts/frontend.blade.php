@@ -16,6 +16,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta http-equiv="expires" content="86400">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- Stylesheets -->
+    <title>{{ config('app.name') }} | @yield('title')</title>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    @laravelPWA
+    @stack('css')
+
+    <!-- Meta Angaben -->
     <meta name="author" content="Alexander Guthmann">
     <meta name="publisher" content="{{ config('app.name') }}">
     <meta name="copyright" content="Alexander Guthmann">
@@ -50,17 +60,6 @@ Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke')">
     <meta name="twitter:creator" content="@buttstaedter-bistro">
     <meta name="twitter:image" content="https://www.buttstaedter-bistro.de/images/logo.jpg">
     <link rel="canonical" href="{{ url()->full() }}"/>
-
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name') }} | @yield('title')</title>
-    <link rel="stylesheet" href="lib/owlcarousel/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="lib/owlcarousel/dist/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    @laravelPWA
-    @stack('css')
 </head>
 <body>
 @include('frontend.layouts.partials.header')
@@ -80,8 +79,8 @@ Burger, Pizza, Döner, Kurdische Gerichte, Salat, Getränke')">
 
 
 <!-- Optional JavaScript -->
-<script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
-<script src="lib/owlcarousel/dist/owl.carousel.min.js"></script>
+<script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/lazysizes.min.js') }}"></script>
 
 
 @stack('js')

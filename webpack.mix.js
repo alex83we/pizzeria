@@ -20,3 +20,7 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.copyDirectory('resources/img', 'public/images');
 mix.copyDirectory('resources/lib', 'public/lib');
+
+if (mix.inProduction()) {
+    mix.version();
+}

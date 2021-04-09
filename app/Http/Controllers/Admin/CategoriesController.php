@@ -60,23 +60,24 @@ class CategoriesController extends Controller
 
         $images = $request->file('images');
         if (isset($images)) {
-            $imagess = $slug.'-'.$images->getClientOriginalName();
+            $imagess = $slug.'-'.$images->getClientOriginalExtension();
             $image = str_replace($search, $replace, $imagess);
 
-            if (Storage::disk('public')->exists('images/kategorie/'.$image)) {
+            /*if (Storage::disk('public')->exists('images/kategorie/'.$image)) {
                 Storage::disk('public')->makeDirectory('images/kategorie/'.$image);
-            }
-            $KategorieImage = Image::make($images)->resize(1400, null, function ($constraint) {
+            }*/
+            $KategorieImage = Image::make($images)->encode('webp', 90)->resize(1400, null, function ($constraint) {
                 $constraint->aspectRatio();
-            })->stream();
-            Storage::disk('public')->put('images/kategorie/'.$image, $KategorieImage);
+            });
+            $KategorieImage->save(public_path('images/kategorie/'.$image . '.webp'));
+//            Storage::disk('public')->put('images/kategorie/'.$image, $KategorieImage);
         }
 
         $category = new Category();
-        $category->title = $title;
+        $category->title = $request->title;
         $category->name = $name;
         $category->slug = $slug;
-        $category->images = $image;
+        $category->images = $image.'.webp';
         $category->description = $description;
         $category->published = true;
         $category->kategorie = $title;
@@ -132,24 +133,26 @@ class CategoriesController extends Controller
 
         $images = $request->file('images');
         if (isset($images)) {
-            $imagess = $slug.'-'.$images->getClientOriginalName();
+            $imagess = $slug.'-'.$images->getClientOriginalExtension();
             $image = str_replace($search, $replace, $imagess);
 
-            if (Storage::disk('public')->exists('images/kategorie/'.$image)) {
+            /*if (Storage::disk('public')->exists('images/kategorie/'.$image)) {
                 Storage::disk('public')->makeDirectory('images/kategorie/'.$image);
-            }
-            $KategorieImage = Image::make($images)->resize(1400, null, function ($constraint) {
+            }*/
+            $KategorieImage = Image::make($images)->encode('webp', 90)->resize(1400, null, function ($constraint) {
                 $constraint->aspectRatio();
-            })->stream();
-            Storage::disk('public')->put('images/kategorie/'.$image, $KategorieImage);
+            });
+            $KategorieImage->save(public_path('images/kategorie/'.$image . '.webp'));
+//            Storage::disk('public')->put('images/kategorie/'.$image, $KategorieImage);
+            $save = $image.'.webp';
         } else {
-            $image = $request->imagesalt;
+            $save = $request->imagesalt;
         }
 
         $category->title = $title;
         $category->name = $name;
         $category->slug = $slug;
-        $category->images = $image;
+        $category->images = $save;
         $category->description = $description;
         $category->published = true;
         $category->kategorie = $title;
