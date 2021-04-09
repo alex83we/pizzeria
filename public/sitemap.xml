@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://www.buttstaedter-bistro.de/</loc>
+        <lastmod>2021-04-08T11:27:26+02:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.buttstaedter-bistro.de</loc>
+        <lastmod>2021-04-08T11:27:26+02:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.buttstaedter-bistro.de/lieferservice</loc>
+        <lastmod>2021-04-08T11:27:26+02:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.buttstaedter-bistro.de/kontakt</loc>
+        <lastmod>2021-04-08T11:27:26+02:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.buttstaedter-bistro.de/datenschutz</loc>
+        <lastmod>2021-04-08T11:27:26+02:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.buttstaedter-bistro.de/speisekarte</loc>
+        <lastmod>2021-04-08T11:27:26+02:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.buttstaedter-bistro.de/impressum</loc>
+        <lastmod>2021-04-08T11:27:31+02:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
