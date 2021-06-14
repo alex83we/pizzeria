@@ -71,6 +71,12 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-lg-12">
+                                <label class="form-label" for="title">Sortierung</label>
+                                <input type="number" class="form-control @error('sort') is-invalid @enderror" name="sort" id="sort">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-lg-12">
                                 <label class="form-label" for="description">Beschreibung</label>
                                 <input type="text" id="description" class="form-control @error('description') is-invalid @enderror" name="description" id="description">
                             </div>

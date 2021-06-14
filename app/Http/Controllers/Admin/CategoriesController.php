@@ -74,6 +74,7 @@ class CategoriesController extends Controller
         }
 
         $category = new Category();
+        $category->sort = $request->sort;
         $category->title = $request->title;
         $category->name = $name;
         $category->slug = $slug;
@@ -149,6 +150,7 @@ class CategoriesController extends Controller
             $save = $request->imagesalt;
         }
 
+        $category->sort = $request->sort;
         $category->title = $title;
         $category->name = $name;
         $category->slug = $slug;

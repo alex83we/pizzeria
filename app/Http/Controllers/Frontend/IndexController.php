@@ -33,7 +33,7 @@ class IndexController extends Controller
         $category = DB::table('categories')
             ->join('speisekartes', 'speisekartes.categories_id', '=', 'categories.id')
             ->select('categories.title', 'categories.slug', 'categories.id', 'categories.slug', 'categories.kategorie', 'categories.description', 'categories.images')
-            ->orderBy('categories.id', 'ASC')
+            ->orderBy('categories.sort', 'ASC')
             ->groupBy('categories.title', 'categories.slug', 'categories.id', 'categories.slug', 'categories.kategorie', 'categories.description', 'categories.images')
             ->get();
         $speisekarten = Speisekarte::with('categories')->with('zutatens')->get();
