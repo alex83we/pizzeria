@@ -38,7 +38,7 @@
                     <div class="form-group row">
                         <div class="col-lg-12">
                             <div class="pb-1 font-weight-bold">Vorschau</div>
-                            <div style="height: 185px; background: url({{ Storage::disk('public')->url('images/kategorie/'.$category->images) }}); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
+                            <div style="height: 185px; background: url({{ url('images/kategorie/'.$category->images) }}); background-position: center center; background-size: cover; background-repeat: no-repeat;"></div>
                         </div>
                     </div>
                     <div class="form-group row mb-4">

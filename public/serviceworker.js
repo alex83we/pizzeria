@@ -11,11 +11,6 @@ var filesToCache = [
     '/images/icons/icon-192x192.png',
     '/images/icons/icon-384x384.png',
     '/images/icons/icon-512x512.png',
-    'images/logo.svg',
-    '/images/doener-kebab.jpg',
-    '/images/default.png',
-    '/images/Pizzeria.jpg',
-    '/images/Pizzaofen.jpg'
 ];
 
 // Cache on install

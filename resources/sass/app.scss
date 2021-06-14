@@ -1,6 +1,10 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css2?family=Barlow');
+@font-face {
+  font-family: Barlow, Nunito, sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Nunito') format('woff'),
+       url('https://fonts.googleapis.com/css2?family=Barlow') format('woff');
+  font-display: fallback;
+}
 
 // Variables
 @import 'variables';
