@@ -35,7 +35,7 @@ $blue-dark-2: #5e623f;
     width: em(20);
     height: em(3);
     margin: em(5) em(3);
-    background: $blue-light-1;
+    background: $blue-middle;
   }
 
   &.active span, &:hover span {
@@ -70,7 +70,7 @@ ul {
     padding-top: em(4.5);
     font-size: em(19);
     width: 1%;
-    color: $blue-light-1;
+    color: $blue-middle;
     padding-right: em(15);
   }
 
